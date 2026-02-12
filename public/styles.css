@@ -1,0 +1,22 @@
+.home-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-home, .btn-auth {
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-home { background-color: #2ecc71; }
+.btn-auth { background-color: #3498db; } 

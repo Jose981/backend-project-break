@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Post = require("../models/Product");
+const productController = require("../controllers/productController");
 
 //Obtener todos los productos
-router.get("/products", async (req, res) => {});
+router.get("/products", productController.showProducts);
 
 //Obtener detalle del producto
 //Devolver el dashboard del administrador
@@ -13,3 +13,5 @@ router.get("/products", async (req, res) => {});
 //Devolver formulario para editar un producto
 //Actualizar un producto
 //Eliminar un producto
+
+module.exports = router;

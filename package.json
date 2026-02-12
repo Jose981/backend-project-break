@@ -1,7 +1,13 @@
 {
+  "name": "project-break-2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
   "dependencies": {
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "mongoose": "^9.2.0"
   }
 }
