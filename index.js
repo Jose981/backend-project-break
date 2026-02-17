@@ -1,40 +1,37 @@
 require("dotenv").config();
-
 const express = require("express");
 const session = require("express-session");
-
-const app = express();
-const PORT = 4000;
-
 const { dbConnection } = require("./config/db");
 const routes = require("./routes");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-// Acceso a las rutas
-app.use("/", routes);
-
+//Conexión a Base de Datos
 dbConnection();
 
-//Leer formularios
+// Middlewares de análisis de cuerpo (Body Parser)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Archivos estáticos
-app.use(express.static("public"));
-
-//Configuracion de sesion (LOGIN)
+// CONFIGURACIÓN DE SESIÓN
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: false },
   }),
 );
 
+// Archivos estáticos
+app.use(express.static("public"));
+
+// ACCESO A LAS RUTAS
+app.use("/", routes);
+
 app.listen(PORT, () => {
-  console.log(`Servidor activo en el puerto ${PORT}`);
+  console.log(`Servidor activo en http://localhost:${PORT}`);
 });
 
 module.exports = app;

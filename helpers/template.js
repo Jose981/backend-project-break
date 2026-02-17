@@ -1,4 +1,4 @@
-// helpers/template.js
+//Templates de productos y de producto
 const getProductCards = (products, isDashboard = false) => {
   let html = '<div class="products-container">';
 
@@ -35,4 +35,20 @@ const getProductCards = (products, isDashboard = false) => {
   return html;
 };
 
-module.exports = getProductCards;
+const getProduct = (product, isDashboard = false) => {
+  let html = `<div class="product-container">`;
+
+  html += `
+  <div class="product-detail">
+          <img src="${product.image}" width="300"/>
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
+          <p><strong>Categoría:</strong> ${product.category}</p>
+          <p><strong>Talla:</strong> ${product.size}</p>
+          <p><strong>Precio:</strong> ${product.price}€</p>
+          <a href="/products">⬅ Volver</a>
+        </div>
+  `;
+};
+
+((module.exports = getProductCards), getProduct);

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/authController");
 
-//obtener el auth
+router.get("/", authController.iniciarSesion);
+router.post("/", authController.login);
+router.get("/logout", authController.logout);
 
 module.exports = router;

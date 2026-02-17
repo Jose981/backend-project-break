@@ -5,6 +5,9 @@ const productController = require("../controllers/productController");
 //Obtener todos los productos
 router.get("/products", productController.showProducts);
 
+//Obtener detalle de un producto
+router.get("/products/:productId", productController.showProductById);
+
 //Obtener detalle del producto
 //Devolver el dashboard del administrador
 //Devolver formulario para subir un articulo
