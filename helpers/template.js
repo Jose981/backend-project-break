@@ -1,5 +1,5 @@
 //Templates de productos y de producto
-const getProductCards = (products, isDashboard = false) => {
+const getProductCards = (products, isDashboard) => {
   let html = '<div class="products-container">';
 
   products.forEach((product) => {
