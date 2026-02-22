@@ -12,6 +12,7 @@ router.get("/detalle/:id", dashboardController.verProducto);
 //Subir un nuevo producto
 router.get("/new", dashboardController.createProduct);
 router.post("/new", upload.single("image"), dashboardController.addProduct);
+
 //Actualizar un producto
 router.get("/editar/:id", dashboardController.editProduct);
 router.post(
