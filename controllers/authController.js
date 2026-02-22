@@ -11,7 +11,7 @@ const login = (req, res) => {
     req.session.isAdmin = true;
     req.session.user = username;
 
-    return res.redirect("/products");
+    return res.redirect("/dashboard");
   } else {
     const errorInicioSesion = baseHtml(
       loginHtml("Error al iniciar sesion, usuario o contraseña incorrectos"),

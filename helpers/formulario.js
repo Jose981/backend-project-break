@@ -1,47 +1,64 @@
 const createProductForm = () => {
   return `
-    <div class="form-container">
+    <div class="form-card">
       <h2>Añadir Nuevo Producto</h2>
-      <form action="/dashboard" method="POST" enctype="multipart/form-data">
-        <label>Nombre:</label>
-        <input type="text" name="name" required>
+      <form class="form-upload" action="/dashboard/new" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+          <label>Nombre</label>
+          <input class="input" type="text" name="name" placeholder="Nombre del producto" required>
+        </div>
 
-        <label>Descripción:</label>
-        <textarea name="descripcion" required></textarea>
+        <div class="form-row">
+          <label>Descripción</label>
+          <textarea class="input" name="descripcion" placeholder="Descripción breve" required></textarea>
+        </div>
 
-        <label>Precio:</label>
-        <input type="number" name="price" step="0.01" required>
+        <div class="form-row">
+          <label>Precio</label>
+          <input class="input" type="number" name="price" step="0.01" placeholder="0.00" required>
+        </div>
 
-        <label>Imagen:</label>
-        <input type="file" name="imagen" required>
+        <div class="form-row">
+          <label>Imagen</label>
+          <input class="input" type="file" name="image" accept="image/*" required>
+        </div>
 
-        <label>Categoría:</label>
-        <select name="categoria" required>
-          <option value="Camisetas">Camisetas</option>
-          <option value="Pantalones">Pantalones</option>
-          <option value="Zapatos">Zapatos</option>
-          <option value="Accesorios">Accesorios</option>
-        </select>
+        <div class="form-row">
+          <label>Categoría</label>
+          <select class="input" name="categoria" required>
+            <option value="Camisetas">Camisetas</option>
+            <option value="Pantalones">Pantalones</option>
+            <option value="Zapatos">Zapatos</option>
+            <option value="Accesorios">Accesorios</option>
+          </select>
+        </div>
 
-        <label>Talla:</label>
-        <select name="talla" required>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>
+        <div class="form-row two-cols">
+          <div>
+            <label>Talla</label>
+            <select class="input" name="talla" required>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+          <div>
+            <label>Color</label>
+            <select class="input" name="color" required>
+              <option value="Rojo">Rojo</option>
+              <option value="Azul">Azul</option>
+              <option value="Verde">Verde</option>
+              <option value="Negro">Negro</option>
+              <option value="Blanco">Blanco</option>
+            </select>
+          </div>
+        </div>
 
-        <label>Color:</label>
-        <select name="color" required>
-          <option value="Rojo">Rojo</option>
-          <option value="Azul">Azul</option>
-          <option value="Verde">Verde</option>
-          <option value="Negro">Negro</option>
-          <option value="Blanco">Blanco</option>
-        </select>
-
-        <button type="submit">Crear</button>
+        <div class="form-row">
+          <button class="btn-home btn-submit" type="submit">Crear producto</button>
+        </div>
       </form>
     </div>
   `;

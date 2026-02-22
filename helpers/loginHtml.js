@@ -1,11 +1,13 @@
 const loginContent = () => `
-<div class="login-container">
+<div class="home-container">
 
 <h1>Iniciar Sesión</h1>
-<form action="/auth" method="POST">
-<input type="text" name="username" placeholder="Introduce el nombre del usuario" required>
-<input type="password" name="password" placeholder="Introduce la contraseña" required>
-<button type="submit">Entrar</button>
+<form action="/auth" method="POST" class="form-login">
+<div class="parametros-login">
+<input type="text" name="username" class="parametro" placeholder="Introduce el nombre del usuario" required>
+<input type="password" name="password" class="parametro" style="padding:10px;" placeholder="Introduce la contraseña" required>
+</div>
+<button type="submit" class="btn-home">Entrar</button>
 </form>
 </div>
 `;
